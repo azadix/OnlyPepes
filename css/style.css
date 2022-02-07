@@ -1,0 +1,83 @@
+body {
+    background-color: #292929;
+    color: white;
+    margin: 0;
+}
+
+nav {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #202020;
+}
+
+#nav-full {
+    height: 50px;
+    width: 1540px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#nav-left {
+    height: 100%;
+    width: 20%;
+    display: inline-block;
+}
+
+#nav-left img {
+    height: 100%;
+}
+
+#nav-right {
+    float: right;
+}
+
+.nav-link {
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: green;
+}
+
+#content {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.imagePepe {
+    width: 40%;
+    height: 40%;
+    margin: 0% 2% 5% 2%;
+    padding-left: 25%;
+}
+
+input[type=text] {
+    margin: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 300px;
+}
+
+input[type=file] {
+    margin: 4px 0px 4px 0px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+input[type=submit] {
+    background-color: green;
+    color: white;
+    padding: 16px 32px;
+    margin: 10px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
