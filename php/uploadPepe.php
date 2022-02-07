@@ -13,8 +13,6 @@
     $imageExtension = strtolower(pathinfo($originalFilename, PATHINFO_EXTENSION));
     $uploadTime = time();
 
-    var_dump($filePrompt);
-
     //Define empty array to store error messages
     $errorMessage = array();    
     
@@ -64,16 +62,15 @@
                         `{$randomFilename}`,
                         `{$imageExtension}`
                     )";
-                    var_dump($qr);
             $connection->query($qr);
         } else {
             array_push($errorMessage, "Sorry, there was an error uploading your file.");
         }
     }
 
-    //header("Location: ../index.php");
-    foreach ($errorMessage as $message){
-        echo $message;
-    }
+    header("Location: ../index.php");
+    // foreach ($errorMessage as $message){
+    //     echo $message;
+    // }
     exit;
 ?>
