@@ -12,7 +12,7 @@
     $filePrompt = htmlspecialchars($_POST['name']);
     $imageExtension = strtolower(pathinfo($originalFilename, PATHINFO_EXTENSION));
     $uploadTime = time();
-
+    
     //Define empty array to store error messages
     $errorMessage = array();    
     

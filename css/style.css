@@ -1,49 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+:root {
+    --darker-bg: #151515;
+    --lighter-bg: #353535;
+    --grey: #464646;
+    --main-color: #00a800;
+    --sub-color: #00ff01;
+    font-family: "Raleway";
+}
+
 body {
-    background-color: #292929;
+    background-color: var(--grey);
     color: white;
     margin: 0;
 }
 
 nav {
     top: 0;
-    left: 0;
-    right: 0;
     width: 100%;
-    background-color: #202020;
+    background-color: var(--lighter-bg);
 }
 
-#nav-full {
+#nav-full ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     height: 50px;
-    width: 1540px;
-    max-width: 100%;
-    margin: 0 auto;
-    position: relative;
+    background-color: var(--lighter-bg);
+    font-size: 20px;
 }
 
-#nav-left {
-    height: 100%;
-    width: 20%;
-    display: inline-block;
-}
-
-#nav-left img {
-    height: 100%;
-}
-
-#nav-right {
+#nav-full li {
     float: right;
 }
 
-.nav-link {
+#nav-left {
+    float: left;
+}
+
+#nav-full li a {
+    display: block;
     color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 25px;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
 }
 
-.nav-link:hover {
-    color: green;
+#nav-full img {
+    height: 100%;
+}
+
+#nav-full li a:hover {
+    color: var(--main-color);
+    background-color: var(--grey);
+    border: 2px;
 }
 
 #content {
@@ -56,28 +66,4 @@ nav {
     height: 40%;
     margin: 0% 2% 5% 2%;
     padding-left: 25%;
-}
-
-input[type=text] {
-    margin: 4px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    width: 300px;
-}
-
-input[type=file] {
-    margin: 4px 0px 4px 0px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-}
-
-input[type=submit] {
-    background-color: green;
-    color: white;
-    padding: 16px 32px;
-    margin: 10px;
-    text-decoration: none;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
 }
