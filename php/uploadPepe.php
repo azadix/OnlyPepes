@@ -45,32 +45,34 @@
     //Check if file passed all check
     if ($uploadStatus == 1) {
         if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $fileSaveDirectory)) {
-            array_push($errorMessage, "The file " . $randomFilename . " has been uploaded.");
             $userID = 1;
             $qr = "INSERT INTO 
-                        pepelist (
-                            name, 
-                            uploaderId, 
-                            uploadTime, 
-                            fileName,
-                            extension
+                        `pepelist` (
+                            `name`,
+                            `uploaderId`,
+                            `fileName`,
+                            `extension`
                         )
                     VALUES (
-                        `{$filePrompt}`,
-                        `{$userID}`,
-                        `{$uploadTime}`,
-                        `{$randomFilename}`,
-                        `{$imageExtension}`
+                        '{$filePrompt}',
+                        '{$userID}',
+                        '{$randomFilename}',
+                        '{$imageExtension}'
                     )";
-            $connection->query($qr);
+            $result = $connection->query($qr);
+
+            if ($result) {
+                array_push($errorMessage, "The file " . $randomFilename . " has been uploaded.");
+            }
+            
         } else {
             array_push($errorMessage, "Sorry, there was an error uploading your file.");
         }
     }
 
-    header("Location: ../index.php");
-    // foreach ($errorMessage as $message){
-    //     echo $message;
-    // }
+    //header("Location: ../index.php");
+    foreach ($errorMessage as $message){
+        echo $message;
+    }
     exit;
 ?>

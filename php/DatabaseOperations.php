@@ -6,6 +6,11 @@
         $hostDB = 'localhost';
         $usernameDB = 'admin';
         $passwordDB = 'admin';
+
+        if ($_SERVER['HTTP_HOST'] !== 'localhost'){
+            require "creds.php";
+        }
+        
         
         // Connect to db using mysqli
         if ($dbName){
