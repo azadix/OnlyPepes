@@ -1,73 +1,187 @@
 :root {
+    /* Defining website color variables */
     --darker-bg: #151515;
     --lighter-bg: #353535;
-    --grey: #464646;
+    --gray: #464646;
     --main-color: #00a800;
     --sub-color: #00ff01;
     font-family: "Raleway";
 }
 
 body {
-    background-color: var(--grey);
+    background-color: var(--gray);
     color: white;
     margin: 0;
 }
 
-nav {
-    top: 0;
-    width: 100%;
+
+/* Beginning of shamelessly stolen code 
+
+Individual elements are easy to understand but using all of them to make a hamburger was to difficult
+I modified it to fit my purpose (changed couple of things-mostly styling and sizes)
+https://stackoverflow.com/questions/59820346/how-would-i-turn-the-navbar-into-a-hamburger-menu-when-on-mobile
+*/
+
+.header {
     background-color: var(--lighter-bg);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
 }
 
-#nav-full ul {
-    list-style-type: none;
+.header ul {
     margin: 0;
     padding: 0;
+    list-style: none;
     overflow: hidden;
-    height: 50px;
     background-color: var(--lighter-bg);
-    font-size: 20px;
 }
 
-#nav-full li {
-    float: right;
-}
-
-#nav-left {
-    float: left;
-}
-
-#nav-full li a {
+.header li .nav-link {
     display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+    padding: 20px 20px;
     text-decoration: none;
+    font-size: large;
 }
 
-#nav-full img {
-    height: 100%;
-}
-
-#nav-full li a:hover {
+.header li .nav-link:hover,
+.header .menu-btn:hover {
+    background-color: var(--gray);
     color: var(--main-color);
-    background-color: var(--grey);
-    border: 2px;
 }
+
+.header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    text-decoration: none;
+    height: 59px;
+}
+
+
+/* menu */
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+
+/* menu icon */
+
+.header .menu-icon {
+    cursor: pointer;
+    float: right;
+    padding: 24px 20px;
+    position: relative;
+}
+
+.header .menu-icon .navicon {
+    background: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.header .navicon:before {
+    top: 5px;
+}
+
+.header .navicon:after {
+    top: -5px;
+}
+
+
+/* menu btn */
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked~.menu {
+    max-height: 240px;
+}
+
+.header .menu-btn:checked~.menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+.header .menu .nav-link {
+    color: white;
+}
+
+
+/* End of shamelessly stolen code */
 
 #content {
-    padding-left: 10%;
-    padding-right: 10%;
+    margin-top: 75px;
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: 1;
+    justify-content: center;
 }
 
-.imagePepe {
-    width: 40%;
-    height: 40%;
-    margin: 0% 2% 5% 2%;
-    padding-left: 25%;
+.divPepe {
+    padding-top: 1%;
 }
 
-.pepe img {
-    max-width: 900px;
-    width: 40%;
+.divPepe .imagePepe {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 1%;
+}
+
+#content .divPepe .break {
+    height: 1px;
+    border-width: 0;
+    background-color: gray;
+    margin: 0;
+}
+
+@media (min-width: 800px) {
+    .header li {
+        float: left;
+    }
+    .header li a {
+        padding: 20px 30px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+    #content {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}
+
+@media (max-width: 320px) {
+    .header .logo {
+        display: none;
+    }
 }
