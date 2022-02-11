@@ -70,9 +70,9 @@
         }
     }
 
-    //header("Location: ../index.php");
-    foreach ($errorMessage as $message){
-        echo $message;
-    }
+    header("Location: ../index.php");
+    // foreach ($errorMessage as $message){
+    //     echo $message;
+    // }
     exit;
 ?>
