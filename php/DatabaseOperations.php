@@ -72,4 +72,3 @@
     if ($connection->query(getQueryIfTableExists("bartiseznux96_onlypepes", "pepelist"))) {
         $connection->query(file_get_contents(ROOT_DIR . "/sql/createTable.sql"));
     }
-?>
