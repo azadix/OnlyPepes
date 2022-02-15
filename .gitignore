@@ -1,2 +1,4 @@
 *.todo
 .idea
+pepes/*.*
+php/creds.php

@@ -1,17 +1,24 @@
 <?php
     define('ROOT_DIR', realpath(__DIR__.'/..'));
+
     global $connection; 
 
     function connectToMYSQL($dbName = false){
         $hostDB = 'localhost';
         $usernameDB = 'admin';
         $passwordDB = 'admin';
+
+        if ($_SERVER['HTTP_HOST'] !== 'localhost'){
+            require "creds.php";
+        }
+        
         
         // Connect to db using mysqli
+        //TODO - Fix connecting to database, maybe OO
         if ($dbName){
-            $connection = new mysqli($hostDB,$usernameDB,$passwordDB, $dbName);
+            $connection = new mysqli($hostDB, $usernameDB, $passwordDB, $dbName);
         } else {
-            $connection = new mysqli($hostDB,$usernameDB,$passwordDB);
+            $connection = new mysqli($hostDB, $usernameDB, $passwordDB);
         }
         
         //Check if connection was made
