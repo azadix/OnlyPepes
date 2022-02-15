@@ -1,7 +1,6 @@
 <?php  
     require_once "DatabaseOperations.php";
     
-    
     function generatemd5Hash($original, $uploadTime) {
         $hash = md5($original . $uploadTime);
         return $hash;
@@ -42,7 +41,7 @@
         $uploadStatus = 0;
     }
 
-    //Check if file passed all check
+    //Check if file passed all checks
     if ($uploadStatus == 1) {
         if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $fileSaveDirectory)) {
             $userID = 1;

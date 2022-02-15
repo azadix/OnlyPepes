@@ -12,6 +12,7 @@
 
     $files = $connection->query("SELECT `name`,`fileName`,`extension` FROM `pepelist`");
     
+    //TODO - Add pagination
     foreach ($files as $pepe){
         echo "<div class='divPepe'>";
         echo "<h2>{$pepe['name']}</h2>";

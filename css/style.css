@@ -15,9 +15,9 @@ body {
 }
 
 
-/* Beginning of shamelessly stolen code 
+/* Beginning of copied code 
 
-Individual elements are easy to understand but using all of them to make a hamburger was to difficult
+Individual elements are easy to understand but using all of them to make a hamburger was too difficult
 I modified it to fit my purpose (changed couple of things-mostly styling and sizes)
 https://stackoverflow.com/questions/59820346/how-would-i-turn-the-navbar-into-a-hamburger-menu-when-on-mobile
 */
@@ -131,7 +131,7 @@ https://stackoverflow.com/questions/59820346/how-would-i-turn-the-navbar-into-a-
 }
 
 
-/* End of shamelessly stolen code */
+/* End of copied code */
 
 #content {
     margin-top: 75px;
