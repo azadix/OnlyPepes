@@ -1,5 +1,5 @@
 :root {
-    /* Defining website color variables */
+    /* Defining website color as variables */
     --darker-bg: #151515;
     --lighter-bg: #353535;
     --gray: #464646;
@@ -159,7 +159,7 @@ https://stackoverflow.com/questions/59820346/how-would-i-turn-the-navbar-into-a-
     margin: 0;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 820px) {
     .header li {
         float: left;
     }
