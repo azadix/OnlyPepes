@@ -6,6 +6,8 @@
         return $hash;
     }
 
+    $allowedExtensions = array("jpg", "jpeg", "bmp", "png");
+
     $uploadStatus = 1;
     $originalFilename = basename($_FILES["uploadImage"]["name"]);
     $filePrompt = htmlspecialchars($_POST['name']);
@@ -27,6 +29,12 @@
             array_push($errorMessage, "Wrong extenstion");
             $uploadStatus = 0;
         }
+    }
+
+    //Check if extension is in allowed extensions array
+    if (!in_array($imageExtension, $allowedExtensions)) {
+        array_push($errorMessage, "File with this extension is not allowed");
+        $uploadStatus = 0;
     }
 
     //Check if already exists
@@ -74,4 +82,4 @@
     //     echo $message;
     // }
     exit;
-?>
+
