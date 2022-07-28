@@ -1,7 +1,6 @@
 # OnlyPepes
 
 Repository for OnlyPepes
-[Live version here!](https://www.onlypepes.5v.pl) 
 
 The goal of this website is to learn creating websites - both back-end and front-end
 
